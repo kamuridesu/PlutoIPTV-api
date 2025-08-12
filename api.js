@@ -11,6 +11,8 @@ if (delay) {
 }
 console.log(`Delay set to ${delayTime}s`);
 delayTime = delayTime * 1000;
+
+index.main();
 const interval = setInterval(index.main, delayTime);
 
 fastify.get("/playlist.m3u8", (req, res) => {
@@ -31,7 +33,7 @@ fastify.get("/guide.xml", (req, res) => {
   return res.send();
 });
 
-fastify.listen({ port: 3000 }, (err, addr) => {
+fastify.listen({ port: 3000, host: "0.0.0.0" }, (err, addr) => {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
