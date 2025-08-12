@@ -40,10 +40,10 @@ pluto-tv-news
 
 # Api Usage
 
-`GET /playlist.m3u8` returns the generated playlist
-`GET /guide.xml` returns the guide
+- `GET /playlist.m3u8`: returns the generated playlist
+- `GET /guide.xml`: returns the guide
 
 When the service starts, the files are generated.
-New files are generated every 12h by default, you can change it by setting the env var `TOTAL_DELAY_SECONDS`.
+Files are re-generated every 12h by default, you can change it by setting the env var `TOTAL_DELAY_SECONDS`.
 
 My Docker image is available here: quay.io/kamuridesu/pluto-playlist-api
